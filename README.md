@@ -1,3 +1,7 @@
+# Ninja-Bot
+A voice controlled rover that operates on jutsu commands
+
+
 ## Inspiration
 The theme of the hackathon being related to cartoons and anime helped us to think of several project ideas. Naruto, which is a very well-known manga and anime, was the major inspiration behind building this particular project. Naruto is a very memorable anime series from our childhood, and working on the Ninja Bot project has resurfaced a sense of nostalgia as we visited several aspects of the anime over again.
 
