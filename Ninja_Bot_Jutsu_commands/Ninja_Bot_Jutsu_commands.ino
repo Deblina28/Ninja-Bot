@@ -2,10 +2,13 @@
 SoftwareSerial jutsu(11,10); 
 int LED1 = 12, LED2 = 13;
 
-#define R2 8
-#define R1 7
-#define L1 2
+#define base 150
+
+#define R2 9
+#define R1 6
+#define L1 5
 #define L2 3
+
 
 void setup() 
 {   
@@ -60,41 +63,43 @@ while (jutsu.available())
 }
 
 void Flying_thunder()
-{digitalWrite (L1, HIGH);
+{
+analogWrite (L1, base);
 digitalWrite (L2, LOW);
 digitalWrite (R2, LOW);
-digitalWrite (R1, HIGH);
-  }
+analogWrite(R1, base);
+}
 
 void Teleportation()
 {
+analogWrite (L2, base);
 digitalWrite (L1, LOW);
-digitalWrite (L2, HIGH);
-digitalWrite (R2, HIGH);
 digitalWrite (R1, LOW);
+analogWrite(R2, base);
 }
 
 void Shunshin()
-{digitalWrite (L1, HIGH);
+{
+analogWrite (L1, base);
 digitalWrite (L2, LOW);
-digitalWrite (R2, HIGH);
+analogWrite (R2, base);
 digitalWrite (R1, LOW);
-  }
+}
 
 void Body_flicker()
 {
 digitalWrite (L1, LOW);
-digitalWrite (L2, HIGH);
+analogWrite (L2, base);
 digitalWrite (R2, LOW);
-digitalWrite (R1, HIGH);
+analogWrite (R1, base);
 }
 
 void Infinite_tsukuyomi()
 {
-digitalWrite (L1, LOW);
-digitalWrite (L2, LOW);
-digitalWrite (R2, LOW);
-digitalWrite (R1, LOW);
+analogWrite (L1, 255);
+analogWrite (L2, 255);
+analogWrite (R2, 255);
+analogWrite (R1, 255);
 }
 
 void Kamaitachi()
