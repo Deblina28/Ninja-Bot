@@ -10,7 +10,7 @@ These can be interpreted as, move forward, move right, move left, stop, lights t
 Ninja Bot was built using 4 300 RPM BO motors, a L293d motor driver, a Bluetooth module to receive the voice commands, and an Arduino Uno , which is the main controller. With that, to power the rover, we used 2 3.7v Li-On batteries. Finally, an App was installed in your android phone, by using Google's speech recognition, the app converts the speech to text and sends it as a string to the Bluetooth module. And finally the chassis was built using an acrylic board.
 
 ## Challenges we ran into
-Setting up the application to send the commands was a bit tricky, there is a lag between the spelled command and the received string, so it needs some practice to spell at a correct time. Sometimes the speech recognition misinterprets, so we have to trick the program to bypass the misspells.
+Setting up the application to send the commands was a bit tricky, there is a lag between the spelled command and the received string, so it needs some practice to spell at a correct time. Sometimes the speech recognition misinterprets, so we have to trick the program to bypass the misspells. Lastly, we were having some troubles with the 5v input port of the Arduino, it was not getting powered up. We tackled it by moving the connections to the 5v port of the ICSP headers.
 
 ## Accomplishments that we're proud of
 Receiving the speech in form of strings to the Arduino. Change the name of the Bluetooth HC05 to Ninja Bot. And finally watching the rover to move on our spells was the best moment.
