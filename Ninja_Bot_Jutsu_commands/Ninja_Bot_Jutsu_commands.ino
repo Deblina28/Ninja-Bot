@@ -31,15 +31,32 @@ while (jutsu.available())
 
 {
   delay (1);
-   flag = jutsu.read(); 
-   sent = sent+flag;
+  flag = jutsu.read(); 
+ 
+ switch(flag)
+ {
+  case 'F': Flying_thunder();
+            break;
+  case 'R': Shunshin();
+            delay(1000);
+            break;
+  case 'L': Body_flicker();
+            delay(1000);
+            break;
+  case 'S': Infinite_tsukuyomi();
+            delay(1000);
+            break;
+  case 'T': Teleportation();
+            delay(1000);
+            break;  
+  case 'C': Shunshin();            
+            break; 
+   
+  default : Infinite_tsukuyomi();
+ }
 
 }
-  if (sent.length() > 0)
-  {
-    Serial.println (sent);
-    sent = "";
-  }
+  
 }
 
 void Flying_thunder()
