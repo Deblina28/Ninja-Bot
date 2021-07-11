@@ -9,6 +9,7 @@ int LED1 = 12, LED2 = 13;
 #define L1 5
 #define L2 3
 
+boolean f = false;
 
 void setup() 
 {   
@@ -39,12 +40,15 @@ while (jutsu.available())
  switch(flag)
  {
   case 'F': Flying_thunder();
+            delay(1000);
             break;
   case 'R': Shunshin();
             delay(1000);
+            Infinite_tsukuyomi();
             break;
   case 'L': Body_flicker();
             delay(1000);
+            Infinite_tsukuyomi();
             break;
   case 'S': Infinite_tsukuyomi();
             delay(1000);
@@ -52,11 +56,12 @@ while (jutsu.available())
   case 'T': Teleportation();
             delay(1000);
             break;  
-  case 'C': Shunshin();            
-            break; 
-   
+  
+  case 'H': f=!f;
   default : Infinite_tsukuyomi();
  }
+ Serial.println(flag);
+ Rasengan();
 
 }
   
@@ -96,22 +101,14 @@ analogWrite (R1, base);
 
 void Infinite_tsukuyomi()
 {
-analogWrite (L1, 255);
-analogWrite (L2, 255);
-analogWrite (R2, 255);
-analogWrite (R1, 255);
-}
-
-void Kamaitachi()
-{
-digitalWrite (L1, HIGH);
-digitalWrite (L2, LOW);
-digitalWrite (R2, HIGH);
-digitalWrite (R1, LOW);
+analogWrite (L1, 0);
+analogWrite (L2, 0);
+analogWrite (R2, 0);
+analogWrite (R1, 0);
 }
 
 void Rasengan()
 {
-digitalWrite (LED1, HIGH);
-digitalWrite (LED2, HIGH);
+digitalWrite (LED1, f);
+digitalWrite (LED2, f);
   }
